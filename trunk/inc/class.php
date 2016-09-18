@@ -264,8 +264,6 @@
 					}
 					$k -= $kStep;
 				}
-				//todo
-				hiweb()->console( $post->post_title.' → '.$R );
 				return $R;
 			}
 

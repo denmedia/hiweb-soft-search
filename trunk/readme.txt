@@ -1,7 +1,7 @@
 === hiWeb Soft Search ===
 Contributors: Den Media
 Donate link:
-Tags: memory, ram, usage, test, check, memory, hosting, server, limit, memory_get_usage
+Tags: search, query, search.php, soft, relevant, most result, power search, text search, plugin, free plugin
 Requires at least: 3.2
 Tested up to: 4.6
 Stable tag: 4.0.0
