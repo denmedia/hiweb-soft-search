@@ -4,7 +4,7 @@
 	 * Plugin Name: hiWeb Search Simple
 	 * Plugin URI: http://hiweb.moscow/search-simple
 	 * Description: Automatically generates meta tag in the post for easy and quick search. It generates a query request.
-	 * Version: 1.0.0.0
+	 * Version: 1.0.0.1
 	 * Author: Den Media
 	 * Author URI: http://hiweb.moscow
 	 */

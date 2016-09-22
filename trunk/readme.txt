@@ -1,7 +1,11 @@
 === hiWeb Soft Search ===
 Contributors: Den Media
 Donate link:
+<<<<<<< HEAD
 Tags: search, posts, query, wp_query, search query, search posts, sort, relevant, soft search, soft query, query posts, search plugin, query plugin, free plugin, free
+=======
+Tags: search, query, search.php, soft, relevant, most result, power search, text search, plugin, free plugin
+>>>>>>> origin/master
 Requires at least: 3.2
 Tested up to: 4.6
 Stable tag: 4.0.0
