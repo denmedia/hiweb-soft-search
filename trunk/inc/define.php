@@ -17,11 +17,11 @@
 	if (!defined('HIWEB_SEARCH_QUERY_INJECT_METHOD')) define('HIWEB_SEARCH_QUERY_INJECT_METHOD', 2); //Методы встраивания в QUERY поиск: 1 - простой с заменой meta_query, 2 - поиск с анализом схожести (более медленный)
 	if (!defined('HIWEB_SEARCH_META_NAME')) define('HIWEB_SEARCH_META_NAME', 'hiweb_search_meta');
 	if (!defined('HIWEB_SEARCH_META_DELIMITER')) define('HIWEB_SEARCH_META_DELIMITER', '|');
-	if (!defined('HIWEB_SEARCH_META_BOX')) define('HIWEB_SEARCH_META_BOX', true); //Показывать метабокс с индексными данными
+	if (!defined('HIWEB_SEARCH_META_BOX')) define('HIWEB_SEARCH_META_BOX', 1); //Показывать метабокс с индексными данными
 	///
-	if (!defined('HIWEB_SEARCH_KEY_LENGTH_MIN')) define('HIWEB_SEARCH_KEY_LENGTH_MIN', 3); //Минимальное значение найденого ключа
+	if (!defined('HIWEB_SEARCH_KEY_LENGTH_MIN')) define('HIWEB_SEARCH_KEY_LENGTH_MIN', 2); //Минимальное значение найденого ключа
 	if (!defined('HIWEB_SEARCH_KEY_LENGTH_MAX')) define('HIWEB_SEARCH_KEY_LENGTH_MAX', 96); //Максимальное значение найденого ключа
-	if (!defined('HIWEB_SEARCH_USE_META')) define('HIWEB_SEARCH_USE_META', true); //Разрешать анализировать мета данные
+	if (!defined('HIWEB_SEARCH_USE_META')) define('HIWEB_SEARCH_USE_META', false); //Разрешать анализировать мета данные
 	if (!defined('HIWEB_SEARCH_META_NAME_ALLOW_SPACE')) define('HIWEB_SEARCH_META_NAME_ALLOW_SPACE', false); //Разрешать анализировать мета данные, начинающиеся на символ "_"
 	if (!defined('HIWEB_SEARCH_USE_TAXONOMY')) define('HIWEB_SEARCH_USE_TAXONOMY', true); //Разрешать анализировать таксономии
 	if (!defined('HIWEB_SEARCH_USE_AUTHOR')) define('HIWEB_SEARCH_USE_AUTHOR', true); //Разрешать анализировать имя автора
@@ -34,7 +34,7 @@
 
 	if (!isset($hiweb_search_post_allow_keys)) {
 		global $hiweb_search_post_allow_keys;
-		$hiweb_search_post_allow_keys = array('post_title', 'post_content', 'post_name');
+		$hiweb_search_post_allow_keys = array('post_title', 'post_content');
 	}
 	if (!isset($hiweb_search_meta_disallow_keys)) {
 		global $hiweb_search_meta_disallow_keys;

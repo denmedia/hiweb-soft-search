@@ -264,6 +264,8 @@
 					}
 					$k -= $kStep;
 				}
+				//todo
+				hiweb()->console( $post->post_title.' → '.$R );
 				return $R;
 			}
 
@@ -281,15 +283,15 @@
 					$tags[0] = array_merge($tags[0], $this->get_wordAlternatives($item));
 				}
 				///Translite
-				global $hiweb_search_trans_symbols;
-				if (is_array($hiweb_search_trans_symbols)) {
-					global $hiweb_search_trans_symbols_back;
-					$hiweb_search_trans_symbols = array_merge($hiweb_search_trans_symbols, array_flip($hiweb_search_trans_symbols), $hiweb_search_trans_symbols_back);
-					foreach ($tags[0] as $key => $item) {
-						$newItem = strtr($item, $hiweb_search_trans_symbols);
-						if ($item != $newItem) $tags[0][] = $newItem;
-					}
-				}
+//				global $hiweb_search_trans_symbols;
+//				if (is_array($hiweb_search_trans_symbols)) {
+//					global $hiweb_search_trans_symbols_back;
+//					$hiweb_search_trans_symbols = array_merge($hiweb_search_trans_symbols, array_flip($hiweb_search_trans_symbols), $hiweb_search_trans_symbols_back);
+//					foreach ($tags[0] as $key => $item) {
+//						$newItem = strtr($item, $hiweb_search_trans_symbols);
+//						if ($item != $newItem) $tags[0][] = $newItem;
+//					}
+//				}
 				$tags[0] = array_unique($tags[0]);
 				////
 				return implode(HIWEB_SEARCH_META_DELIMITER, $tags[0]);

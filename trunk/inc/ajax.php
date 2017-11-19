@@ -6,4 +6,4 @@
 	 * Time: 18:01
 	 */
 
-	add_action( 'wp_ajax_hiweb_search', array(hiweb_search(),'ajax') );
+	//add_action( 'wp_ajax_hiweb_search', array(hiweb_search(),'ajax') );

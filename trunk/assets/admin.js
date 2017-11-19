@@ -2,6 +2,7 @@
  * Created by hiweb on 22.08.2016.
  */
 
+
 var hw_search_tool = {
 
     data: [],
@@ -33,8 +34,18 @@ var hw_search_tool = {
                 dataType: 'json',
                 data: {do: 'regenerate_select_pt', post_types: post_types},
                 success: function (data) {
-                    jQuery('[data-count-ids]').html(data.length);
-                    hw_search_tool.init(data, start_button_selector, form_selector);
+                    if (data.hasOwnProperty('success')) {
+                        if (data.success) {
+                            jQuery('[data-count-ids]').html(data.data.length);
+                            hw_search_tool.init(data.data, start_button_selector, form_selector);
+                        } else {
+                            alert(data.data);
+                        }
+                    } else {
+                        alert('Неизвестная оишбка');
+                        console.warn(data);
+                    }
+
                 },
                 error: function (data) {
                     console.warn(data);
@@ -66,7 +77,17 @@ var hw_search_tool = {
             dataType: 'json',
             data: {do: 'regenerate', id: element},
             success: function (data) {
-                console.info(hw_search_tool.current + '...done!');
+                if (data.hasOwnProperty('success')) {
+                    if (data.success) {
+                        console.info(hw_search_tool.current + '...done!');
+                    } else {
+                        console.info(hw_search_tool.current + '...' + data.data);
+                    }
+                } else {
+                    alert('Неизвестная ошибка');
+                    console.warn(data);
+                }
+
                 hw_search_tool.do_step(fn_end);
                 hw_search_tool.loader_update();
             },

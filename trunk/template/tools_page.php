@@ -23,7 +23,7 @@
 
     <div id="wpbody-content" aria-label="Main content" tabindex="0">
         <div class="wrap">
-            <h1>hiWeb Search ReGenerate Meta-Index</h1>
+            <h1>hiWeb Soft Search ReGenerate Meta-Index</h1>
 
             <?php if (count($post_types) == 0) : ?>
                 <p>...</p>
@@ -44,7 +44,11 @@
                 <p>
                     <button class="button button-primary" id="hw-search-regenerate-tool-start">Start ReGenerate Post Meta-Index</button>
                 </p>
-                <script>hw_search_tool.init(<?php echo json_encode($post_ids); ?>, '#hw-search-regenerate-tool-start', '#hiweb_search_tool_form');</script>
+                <script>
+					jQuery(document).ready(function(){
+                        hw_search_tool.init(<?php echo json_encode($post_ids); ?>, '#hw-search-regenerate-tool-start', '#hiweb_search_tool_form');
+					});
+				</script>
             <?php endif; ?>
 
         </div>
